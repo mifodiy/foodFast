@@ -4,9 +4,22 @@ body {
 }
 
 body {
-	
+	font-family: 'Rubik', 'Aria', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 1.5;
+	color: $dark;
+	background-color: $silver-100;
+
+	@include mq('phone'){
+		font-size: 16px;
+	}
 }
 
+.lock {
+	overflow: hidden;
+}
 
 
 .wrapper {
@@ -38,6 +51,17 @@ body {
 	flex: 1 0 auto;
 }
 
+.section {
+	margin-bottom: 120px;
+
+	@include mq('tablet'){
+		margin-bottom: 80px;
+	}
+
+	@include mq('phone'){
+		margin-bottom: 40px;
+	}
+}
 
 .footer {
 	flex: 0 0 auto;

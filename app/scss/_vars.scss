@@ -1,4 +1,9 @@
-
+$accent: #8ACB88;
+$silver-200: #ECECEC;
+$silver-100: #FCF7F8;
+$gray: #C2C2C2;
+$darkBlue: #363853;
+$dark: #31352B;
 
 $breakpoints: (
   "phone": 560px,
@@ -19,6 +24,11 @@ $breakpoints: (
   }
 }
 
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+   }
+}
 
 @mixin pseudo($display: block, $pos: absolute, $content: ''){
   content: $content;
