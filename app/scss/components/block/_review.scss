@@ -1,0 +1,103 @@
+.review {
+    display: flex;
+    max-width: 990px;
+    align-items: flex-start;
+
+    @include mq('tablet-2'){
+      flex-direction: column;
+      align-items: center;
+    }
+
+  &__img {
+    border-radius: 50%;
+    margin-right: 40px;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+
+    @include mq('tablet-2'){
+      margin-right: 0;
+    }
+
+    @include mq('phone'){
+      max-width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__content {
+    padding: 30px 0 0 40px;
+
+    @include mq('phone'){
+      padding-top: 27px;
+    }
+  }
+
+  &__blockquote {
+    max-width: 610px;
+    font-style: italic;
+    padding-right: 40px;
+    margin-bottom: 30px;
+    position: relative;
+
+    @include mq('phone'){
+      font-size: 14px;
+      margin-bottom: 20px;
+      padding-right: 36px;
+    }
+
+    &::after,
+    &::before {
+      @include pseudo;
+      width: 33px;
+      height: 24px;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: $gray;
+
+      @include mq('phone'){
+        width: 33px;
+        height: 24px;
+      }
+    }
+
+    &::after {
+      mask-image: url('../images/sprite.svg#quote-open');
+      top: 0;
+      left: -44px;
+
+      @include mq('phone'){
+        top: -10px;
+      }
+    }
+
+    &::before {
+      mask-image: url('../images/sprite.svg#quote-close');
+      right: -3px;
+      bottom: -3px;
+
+      @include mq('phone'){
+        bottom: 10px;
+      }
+    }
+  }
+
+  &__name {
+    font-weight: 500;
+    color: $accent;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    display: block;
+
+    @include mq('phone'){
+      margin-bottom: 12px;
+    }
+  }
+
+  &__status {
+    font-size: 14px;
+    line-height: 1.3;
+    display: block;
+  }
+}

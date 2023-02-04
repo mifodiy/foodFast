@@ -1,0 +1,232 @@
+.reviews {
+
+  &__title {
+    text-align: center;
+    margin-bottom: 45px;
+
+    @include mq('phone') {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__slider {
+    max-width: 990px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 75px;
+
+    @include mq('phone') {
+      padding-bottom: 0;
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    bottom: 0;
+    top: auto;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid $accent;
+    transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+    outline: 0;
+
+    @include mq('phone') {
+      top: 28px;
+      margin-top: 0;
+    }
+
+    &::after {
+      content: '';
+      width: 18px;
+      height: 18px;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: $accent;
+      display: block;
+      transition: background-color 0.5s ease-in-out;
+    }
+  }
+
+  .swiper-button-prev {
+
+    transform: translateX(-115px);
+
+    &::after {
+      mask-image: url("../images/sprite.svg#left-arrow");
+    }
+  }
+
+  .swiper-button-next {
+
+    transform: translateX(75px);
+  
+    &::after {
+      mask-image: url("../images/sprite.svg#right-arrow");
+    }
+  }
+
+  .swiper-button-disabled{
+    border-color: $gray;
+    opacity: 1;
+
+    &::after {
+      background-color: $gray;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: 4px;
+  }
+
+  .swiper-pagination-bullet{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $gray;
+    transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    outline: 0;
+    opacity: 1;
+
+    @include mq("phone") {
+      display: none;
+    }
+
+    &:hover {
+      background-color: $accent;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $accent;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid $accent;
+    transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+    outline: 0;
+    z-index: 5;
+
+    @include mq('phone') {
+      top: 28px;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px rgba($accent, 0.7);
+    }
+
+    &:hover {
+      background-color: rgba($accent, 0.1);
+      border-color: $accent;
+
+      .icon-arrow {
+        background-color: $accent;
+      }
+    }
+
+    &:active {
+      background-color: rgba($accent, 0.1);
+      border: none;
+
+      .icon-arrow {
+        background-color: $accent;
+      }
+    }
+
+    &.slick-disabled {
+      border-color: $gray;
+
+      .icon-arrow {
+        background-color: $gray;
+      }
+    }
+  }
+
+  .slick-prev {
+    transform: translateX(-115px);
+
+    @include mq('phone') {
+      transform: translateX(-138px);
+    }
+  }
+
+  .slick-next {
+    transform: translateX(75px);
+
+    @include mq('phone') {
+      transform: translateX(97px);
+    }
+  }
+
+  .icon-arrow {
+    width: 18px;
+    height: 18px;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    background-color: $accent;
+    display: block;
+    transition: background-color 0.5s ease-in-out;
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+    li:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    button {
+      font-size: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $gray;
+      transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out;
+      outline: 0;
+
+      &:focus {
+        box-shadow: 0px 0px 0px 2px $accent;
+        background-color: $gray;
+      }
+
+      &:hover {
+        background-color: rgba($accent, 0.1);
+        box-shadow: 0px 0px 0px 2px rgba($accent, 0.7);
+      }
+
+      &:active {
+        background-color: $accent;
+      }
+    }
+  }
+
+  .slick-active {
+    button {
+      background-color: $accent;
+    }
+
+  }
+
+}
