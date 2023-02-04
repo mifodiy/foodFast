@@ -1,0 +1,87 @@
+.mobile-app {
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		background-repeat: no-repeat;
+		background-size: 570px 380px;
+		background-position: center right;
+
+		@include mq('desktop'){
+			background-image: none !important;
+			min-height: auto;
+		}
+	}
+
+	&__content{
+		padding: 40px 0;
+
+		@include mq('phone'){
+			padding: 2px 0;
+		}
+	}
+
+	&__title {
+		max-width: 540px;
+		margin-bottom: 45px;
+
+		@include mq('tablet'){
+			margin-bottom: 30px;
+		}
+
+		@include mq('phone'){
+			margin-bottom: 14px;
+		}
+	}
+
+	&__text {
+		max-width: 540px;
+		margin-bottom: 20px;
+
+		@include mq('phone'){
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+
+		p {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__link {
+		display: block;
+		width: 120px;
+		height: 40px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		outline: 0;
+		transition: box-shadow 0.5s ease-in-out;
+
+		&--apple {
+			background-image: url('../images/app-store.svg');
+		}
+
+		&--google {
+			width: 135px;
+			background-image: url('../images/google-play.svg');
+		}
+
+		&:focus{
+			box-shadow: 0px 0px 0px 2px rgba($accent, 0.7);
+			border-radius: 5px;
+		}
+	}
+}
