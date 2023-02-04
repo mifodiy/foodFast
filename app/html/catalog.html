@@ -8,7 +8,9 @@
 
   <main class="main">
     <h1 class="sr-only">Каталог товаров</h1>
-   
+    @include('components/_breadcrumbs.html', {
+      "breadcrumbs__item": '<li class="breadcrumbs__item"><span class="breadcrumbs__link" href="#">Каталог товаров</span></li>'
+    })
    
   </main>
 
