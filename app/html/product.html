@@ -1,0 +1,18 @@
+@include('components/_head.html', {
+  "page": "Каталог товаров | Сэндвич с тунцом"
+})
+
+  @include('components/_header.html', {
+    "page": "product"
+    })
+
+  <main class="main">
+    @include('components/_breadcrumbs.html', {
+      "breadcrumbs__item": '<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="#">Каталог товаров</a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link" href="#">Сэндвич с тунцом</span></li>'
+    })
+    
+  </main>
+
+  @include('components/_footer.html')
+
+@include('components/_footer-scripts.html')
