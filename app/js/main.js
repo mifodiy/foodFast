@@ -164,7 +164,6 @@ $(function () {
   })
 
   const recentSwiper = new Swiper('.recent__slider', {
-    slidesPerView: 5,
     slidesPerGroup: 1,
     
 
@@ -178,14 +177,27 @@ $(function () {
     },
     breakpoints: {
       320: {
+        slidesPerView: 2,
         spaceBetween: 5,
       },
       561: {
-        spaceBetween: 5,
-      },
-      769: {
+        slidesPerView: 2,
         spaceBetween: 29,
       },
+      769: {
+        slidesPerView: 3,
+        spaceBetween: 29,
+      },
+      993: {
+        slidesPerView: 4,
+        spaceBetween: 29,
+      },
+
+      1231: {
+        slidesPerView: 5,
+        spaceBetween: 29,
+      },
+
 
     }
 
@@ -202,6 +214,26 @@ $(function () {
       header.removeClass("sticky");
     }
   });
+
+  const burger = document.querySelector('.menu__btn');
+  const closeMenu = document.querySelector('.side-menu__btn');
+  const mobileMenu = document.querySelector('.side-menu');
+  const bodyLock = document.querySelector('body');
+
+  if (burger != null) {
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.add('side-menu--active');
+      bodyLock.classList.add('lock');
+    });
+  }
+
+  if (closeMenu != null) {
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('side-menu--active');
+      bodyLock.classList.remove('lock');
+    });
+  }
+
 
 
   AOS.init();
