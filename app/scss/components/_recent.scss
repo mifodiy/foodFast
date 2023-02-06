@@ -28,9 +28,6 @@
   .product-card {
     min-height: 260px;
 
-    @include mq('phone') {
-      max-width: 146px;
-    }
   }
 
   .swiper-button-next,
