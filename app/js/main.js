@@ -219,6 +219,8 @@ $(function () {
   const closeMenu = document.querySelector('.side-menu__btn');
   const mobileMenu = document.querySelector('.side-menu');
   const bodyLock = document.querySelector('body');
+  const restSliderOn = document.querySelector('.restaurants__slider');
+  const promoSliderOn = document.querySelector('.promo__slider');
 
   if (burger != null) {
     burger.addEventListener('click', () => {
@@ -232,6 +234,50 @@ $(function () {
       mobileMenu.classList.remove('side-menu--active');
       bodyLock.classList.remove('lock');
     });
+  }
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+
+
+    if (restSliderOn != null) {
+      restSliderOn.classList.add('restaurants__slider--active');
+
+      const restSlider = new Swiper('.restaurants__slider--active', {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+
+      });
+    }
+
+    if (promoSliderOn != null) {
+      promoSliderOn.classList.add('promo__slider--active');
+
+      const promoSlider = new Swiper('.promo__slider--active', {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+
+      });
+    }
+
+  } else {
+
+    if (restSliderOn != null) {
+      restSliderOn.classList.remove('restaurants__slider--active');
+    }
+
+    if (promoSliderOn != null) {
+      promoSliderOn.classList.remove('promo__slider--active');
+    }
   }
 
 
