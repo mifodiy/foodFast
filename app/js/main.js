@@ -146,6 +146,34 @@ $(function () {
 
   })
 
+  const recentSwiper = new Swiper('.recent__slider', {
+    slidesPerView: 5,
+    slidesPerGroup: 1,
+    
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        spaceBetween: 5,
+      },
+      561: {
+        spaceBetween: 5,
+      },
+      769: {
+        spaceBetween: 29,
+      },
+
+    }
+
+  });
+
 
   AOS.init();
 

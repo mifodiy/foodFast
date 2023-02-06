@@ -1,0 +1,131 @@
+.recent {
+
+  &__title {
+    margin-bottom: -42px;
+
+    @include mq('phone') {
+      font-size: 20px;
+      margin-bottom: -69px;
+    }
+  }
+
+  &__list {
+    position: relative;
+  }
+
+  &__slider {
+    padding: 2px;
+  }
+
+  &__slide {
+    padding-top: 100px;
+
+    @include mq('phone') {
+      padding-bottom: 45px;
+    }
+  }
+
+  .product-card {
+    min-height: 260px;
+
+    @include mq('phone') {
+      max-width: 146px;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid $gray;
+    top: 24px;
+    right: 2px;
+    transform: translateY(0);
+    transition: box-shadow 0.5s ease-in-out, background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+    outline: 0;
+
+    @include mq('phone') {
+      display: none;
+    }
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px rgba($accent, 0.7);
+    }
+
+    &:hover {
+      background-color: rgba($accent, 0.1);
+      border-color: $accent;
+
+      &::after {
+        background-color: $accent;
+      }
+    }
+
+    &:active {
+      background-color: rgba($accent, 0.1);
+      border: none;
+
+      &::after {
+        background-color: $accent;
+      }
+    }
+
+  }
+
+  .swiper-button-prev {
+    right: 62px;
+    left: auto;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    content: "";
+    position: absolute;
+    display: block;
+    mask-repeat: no-repeat;
+    width: 11px;
+    height: 19px;
+    background-color: $gray;
+    mask-size: cover;
+    mask-position: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.5s ease-in-out;
+
+  }
+
+  .swiper-button-prev::after {
+    mask-image: url("../images/sprite.svg#left-arrow");
+
+  }
+
+  .swiper-button-next::after {
+    mask-image: url("../images/sprite.svg#right-arrow");
+
+  }
+
+  .swiper-pagination {
+    display: none;
+
+    @include mq('phone') {
+      display: block;
+      bottom: -5px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $gray;
+
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 7px);
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $accent;
+  }
+
+}
