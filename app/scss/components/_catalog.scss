@@ -179,21 +179,11 @@
     bottom: 0;
     z-index: 50;
     transform: translateX(-200%);
+    overflow: scroll;
   }
 
   &--active{
     transform: translateX(0);
-    &::before{
-      content: '';
-      position: absolute;
-      background-color: rgba(#000000, 0.5);
-      top: 0;
-      left: 320px;
-      width: calc(100vw - 320px);
-      height: 100vh;
-      display: block;
-      z-index: 40;
-    }
   }
 
   &__btn{
