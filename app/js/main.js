@@ -221,6 +221,9 @@ $(function () {
   const bodyLock = document.querySelector('body');
   const restSliderOn = document.querySelector('.restaurants__slider');
   const promoSliderOn = document.querySelector('.promo__slider');
+  const sideBarOn = document.querySelector('.catalog__btn');
+  const closeSideBar = document.querySelector('.catalog-sidebar__btn');
+  const sideBar = document.querySelector('.catalog-sidebar');
 
   if (burger != null) {
     burger.addEventListener('click', () => {
@@ -232,6 +235,20 @@ $(function () {
   if (closeMenu != null) {
     closeMenu.addEventListener('click', () => {
       mobileMenu.classList.remove('side-menu--active');
+      bodyLock.classList.remove('lock');
+    });
+  }
+
+  if (sideBarOn != null) {
+    sideBarOn.addEventListener('click', () => {
+      sideBar.classList.add('catalog-sidebar--active');
+      bodyLock.classList.add('lock');
+    });
+  }
+
+  if (closeSideBar != null) {
+    closeSideBar.addEventListener('click', () => {
+      sideBar.classList.remove('catalog-sidebar--active');
       bodyLock.classList.remove('lock');
     });
   }
